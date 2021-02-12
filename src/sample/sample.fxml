@@ -3,14 +3,25 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="172.0" prefWidth="225.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="225.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <TextField editable="false">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
          <VBox.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+            <Insets left="10.0" right="10.0" top="20.0" />
          </VBox.margin>
+      </TextField>
+      <TextField fx:id="idMainTextField" editable="false" prefHeight="44.0" prefWidth="205.0">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </VBox.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
       </TextField>
       <GridPane>
         <columnConstraints>
@@ -21,27 +32,30 @@
         </columnConstraints>
         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="7" />
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="8" GridPane.columnIndex="1" />
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="9" GridPane.columnIndex="2" />
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="4" GridPane.rowIndex="1" />
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="1" GridPane.rowIndex="2" />
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="," GridPane.rowIndex="3" />
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="=" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" onAction="#button7Clicked" text="7" GridPane.rowIndex="1" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" onAction="#button8Clicked" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" onAction="#button9Clicked" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="4" GridPane.rowIndex="2" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="1" GridPane.rowIndex="3" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="," GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" onAction="#buttonEqualsClicked" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4" />
             <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="/" GridPane.columnIndex="3" />
             <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" onAction="#buttonPlusClicked" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="+/-" GridPane.rowIndex="4" />
+            <Button maxHeight="25.0" maxWidth="50.0" mnemonicParsing="false" text="C" />
          </children>
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
